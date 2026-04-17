@@ -1,8 +1,12 @@
-const INTRO_BACKGROUND_SRC = '/media/hero-section.json';
+const INTRO_BACKGROUND_SRC =
+  'https://lottie.host/cb285933-adb6-4a63-bcc4-d63e03eac41d/AecXWEI3tO.json';
 
 const IntroSection = () => {
   return (
-    <section id="intro" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section
+      id="intro"
+      className="relative min-h-[75vh] flex items-center justify-center overflow-hidden pt-16 pb-12"
+    >
       <lottie-player
         src={INTRO_BACKGROUND_SRC}
         background="transparent"

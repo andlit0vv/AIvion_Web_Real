@@ -27,9 +27,9 @@ const SolutionsSection = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-black py-24" id="solutions">
+    <section className="min-h-[60vh] bg-black py-10" id="solutions">
       <div className="max-w-[1200px] mx-auto px-8 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6">
           {/* Left Column - Title and Description */}
           <div className="lg:col-span-4">
             <h2 className="text-white text-4xl md:text-5xl font-semibold tracking-tight mb-6">
