@@ -31,7 +31,7 @@ const Header = () => {
       >
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
           <div className="flex items-center justify-between h-20">
-            <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
+            <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('intro')}>
               <img src={logoArrowA} alt="AIvion logo" className="h-12 w-auto object-contain" />
             </div>
 
