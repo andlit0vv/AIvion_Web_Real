@@ -48,7 +48,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
   const dropdownOptions = {
     role: ['CEO / Founder', 'CTO', 'Product Manager', 'Marketing Director', 'Другое'],
     teamSize: ['1-10', '11-50', '51-200', '200+'],
-    budget: ['До 500K ₽', '500K - 2M ₽', '2M - 5M ₽', '5M+ ₽'],
+    budget: ['До 300K ₽', '300K - 1M ₽', '1M - 3M ₽', 'Более 3M ₽'],
   };
 
   if (!isOpen) return null;
@@ -99,7 +99,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              placeholder="Your Name"
+              placeholder="Ваше имя"
               className="w-full bg-transparent text-white text-base placeholder:text-white/40 border-b border-white/20 pb-3 focus:outline-none focus:border-white/50 transition-colors"
               required
             />
@@ -112,7 +112,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               name="company"
               value={formData.company}
               onChange={handleInputChange}
-              placeholder="Company Name"
+              placeholder="Название компании"
               className="w-full bg-transparent text-white text-base placeholder:text-white/40 border-b border-white/20 pb-3 focus:outline-none focus:border-white/50 transition-colors"
               required
             />
@@ -126,7 +126,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               className="w-full bg-transparent text-left text-base pb-3 border-b border-white/20 focus:outline-none flex items-center justify-between"
             >
               <span className={formData.role ? 'text-white' : 'text-white/40'}>
-                {formData.role || 'Роль в компании'}
+                {formData.role || 'Позиция в компании'}
               </span>
               <svg
                 className={`w-5 h-5 text-white/50 transition-transform ${openDropdown === 'role' ? 'rotate-180' : ''}`}
@@ -242,7 +242,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               name="contact"
               value={formData.contact}
               onChange={handleInputChange}
-              placeholder="Ваш контакт (@telegram_id)"
+              placeholder="Ваш контакт (@telegram_id / +7 (999) 123‑45‑67)"
               className="w-full bg-transparent text-white text-base placeholder:text-white/40 border-b border-white/20 pb-3 focus:outline-none focus:border-white/50 transition-colors"
               required
             />
