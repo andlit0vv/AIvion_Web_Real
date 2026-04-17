@@ -1,9 +1,10 @@
 const ServicesSection = () => {
   return (
-    <section className="bg-black py-24" id="services">
+    <section className="bg-black py-10" id="services">
       <div className="max-w-[1200px] mx-auto px-8 lg:px-16">
+        <h2 className="text-left text-white text-3xl md:text-4xl font-semibold mb-6">Наши услуги</h2>
         {/* Row 1: Аналитика и AI (2/3) + Коммуникации (1/3) */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
           {/* Аналитика и AI */}
           <div className="lg:col-span-2 border border-white/20 rounded-lg p-8">
             <h3 className="text-white text-2xl font-semibold mb-2">Аналитика и AI</h3>
@@ -46,7 +47,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Row 2: Продажи + Маркетинг + Разработка */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
           {/* Продажи */}
           <div className="border border-white/20 rounded-lg p-8">
             <h3 className="text-white text-2xl font-semibold mb-2">Продажи</h3>
@@ -97,7 +98,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Row 3: AI-инфраструктура (expanded) + Операционные процессы */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
           {/* AI-инфраструктура - expanded width */}
           <div className="lg:col-span-2 border border-white/20 rounded-lg p-8">
             <div className="flex items-start justify-between mb-2">

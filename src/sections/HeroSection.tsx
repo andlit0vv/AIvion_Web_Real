@@ -81,7 +81,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="h-screen flex flex-col items-center justify-center bg-black overflow-hidden pt-20"
+      className="min-h-[65vh] flex flex-col items-center justify-center bg-black overflow-hidden py-10"
       onWheel={handleWheel}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
@@ -92,7 +92,7 @@ const HeroSection = () => {
         </h1>
       </div>
 
-      <div className="flex items-center gap-2 mt-20">
+      <div className="flex items-center gap-2 mt-12">
         {[0, 1, 2].map((index) => (
           <button
             key={index}
