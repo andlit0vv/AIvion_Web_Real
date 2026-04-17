@@ -1,12 +1,12 @@
 const ServicesSection = () => {
   return (
-    <section className="bg-black py-10" id="services">
+    <section className="snap-start bg-black py-10" id="services">
       <div className="max-w-[1200px] mx-auto px-8 lg:px-16">
         <h2 className="text-left text-white text-3xl md:text-4xl font-semibold mb-6">Наши услуги</h2>
         {/* Row 1: Аналитика и AI (2/3) + Коммуникации (1/3) */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
           {/* Аналитика и AI */}
-          <div className="lg:col-span-2 border border-white/20 rounded-lg p-8">
+          <div className="lg:col-span-2 border border-white/20 rounded-lg p-8 transition-all duration-500 hover:scale-[1.015] hover:border-[#FFD700]/80 hover:shadow-[0_0_34px_rgba(255,215,0,0.32)]">
             <h3 className="text-white text-2xl font-semibold mb-2">Аналитика и AI</h3>
             <p className="text-white/50 text-sm mb-8">Data-driven подход и прогнозирование</p>
             <div className="grid grid-cols-2 gap-x-8 gap-y-6">

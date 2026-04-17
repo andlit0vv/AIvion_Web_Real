@@ -27,7 +27,7 @@ const SolutionsSection = () => {
   ];
 
   return (
-    <section className="min-h-[60vh] bg-black py-10" id="solutions">
+    <section className="min-h-[60vh] snap-start bg-black py-10" id="solutions">
       <div className="max-w-[1200px] mx-auto px-8 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6">
           {/* Left Column - Title and Description */}
@@ -39,7 +39,7 @@ const SolutionsSection = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua.
             </p>
-            <button className="bg-[#3B82F6] hover:bg-[#2563EB] text-white text-sm font-medium px-6 py-3 rounded transition-colors">
+            <button className="bg-[#229ED9] hover:bg-[#1B8FC5] text-white text-sm font-medium px-6 py-3 rounded transition-colors shadow-[0_10px_24px_rgba(34,158,217,0.35)]">
               Посмотреть все кейсы
             </button>
           </div>
@@ -50,7 +50,7 @@ const SolutionsSection = () => {
               {solutions.map((solution, index) => (
                 <div
                   key={index}
-                  className="bg-[#1a1a1a] rounded-lg p-6 hover:bg-[#222] transition-colors duration-300"
+                  className="flex h-full flex-col bg-[#1a1a1a] rounded-lg p-6 hover:bg-[#222] transition-colors duration-300"
                 >
                   <h3 className="text-white text-lg font-semibold mb-4 whitespace-pre-line leading-tight">
                     {solution.title}
@@ -60,7 +60,7 @@ const SolutionsSection = () => {
                   </p>
                   <a
                     href={solution.link}
-                    className="text-[#FFD700] text-sm font-medium hover:underline transition-all"
+                    className="mt-auto text-[#FFD700] text-sm font-medium hover:underline transition-all"
                   >
                     Подробнее
                   </a>
