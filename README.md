@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# AIvion Web (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Это одностраничный сайт на **React + TypeScript + Vite + Tailwind**.
 
-Currently, two official plugins are available:
+## Почему на GitHub Pages была пустая страница
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Вы выбрали **Deploy from a branch → main → /(root)**.
+В таком режиме GitHub Pages отдает исходный `index.html` из корня репозитория.
 
-## React Compiler
+В корневом `index.html` подключается файл разработки:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```html
+<script type="module" src="/src/main.tsx"></script>
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Браузер на Pages не умеет напрямую исполнять `tsx` и импорты из исходников как в dev-сервере Vite — поэтому страница выглядит пустой.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Самый простой запуск локально
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Требования:
+- Node.js 20+
+- npm
+
+Команды:
+
+```bash
+npm install
+npm run dev
 ```
+
+Открыть: `http://localhost:5173`
+
+## Сборка production-версии
+
+```bash
+npm run build
+npm run preview
+```
+
+Готовый сайт лежит в папке `dist/`.
+
+## Самый простой деплой на GitHub Pages (без ручной возни)
+
+В репозиторий добавлен workflow `.github/workflows/deploy-pages.yml`.
+Он автоматически:
+1. ставит зависимости,
+2. собирает проект (`npm run build`),
+3. публикует `dist/` в GitHub Pages.
+
+### Что сделать в настройках GitHub
+
+1. Откройте **Settings → Pages**.
+2. В разделе **Build and deployment** выберите **Source: GitHub Actions**.
+3. Убедитесь, что workflow **Deploy Vite site to GitHub Pages** успешно прошел в табе **Actions**.
+
+После этого сайт будет открываться по адресу вида:
+
+`https://<ваш-username>.github.io/<имя-репозитория>/`
+
+---
+
+## Структура проекта
+
+- `index.html` — HTML-шаблон точки входа.
+- `src/main.tsx` — точка входа React-приложения.
+- `src/App.tsx` — сборка секций страницы.
+- `src/sections/*` — секции лендинга (Hero, Process, Growth, Team, Solutions, Services, Header, Modal).
+- `src/components/ui/*` — переиспользуемые UI-компоненты.
+- `src/hooks/*` — пользовательские хуки.
+- `vite.config.ts` — конфигурация Vite.
+- `.github/workflows/deploy-pages.yml` — автодеплой в Pages.
