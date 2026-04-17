@@ -1,12 +1,14 @@
-const INTRO_BACKGROUND_SRC = '/media/intro-hero.gif';
+const INTRO_BACKGROUND_SRC = '/media/hero-section.json';
 
 const IntroSection = () => {
   return (
     <section id="intro" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      <img
+      <lottie-player
         src={INTRO_BACKGROUND_SRC}
-        alt=""
-        aria-hidden="true"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
