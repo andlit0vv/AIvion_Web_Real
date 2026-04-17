@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="min-h-screen bg-black">
       <Header />
-      <main>
+      <main className="snap-y snap-mandatory">
         <IntroSection />
         <HeroSection />
         <TeamSection />

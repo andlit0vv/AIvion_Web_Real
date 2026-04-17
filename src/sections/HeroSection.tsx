@@ -81,24 +81,42 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="min-h-[65vh] flex flex-col items-center justify-center bg-black overflow-hidden py-10"
+      className="relative flex min-h-screen snap-start flex-col items-center justify-center overflow-hidden bg-black pt-20 pb-10"
       onWheel={handleWheel}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="max-w-[920px] mx-auto px-8 text-center min-h-[220px] flex items-center justify-center">
-        <h1 className="text-white text-3xl md:text-4xl lg:text-[42px] font-light leading-relaxed tracking-wide transition-opacity duration-500">
-          {slides[activeSlide]}
-        </h1>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_22%,rgba(34,158,217,0.16),transparent_42%),radial-gradient(circle_at_82%_70%,rgba(255,215,0,0.14),transparent_45%)]" />
+
+      <div className="relative mx-auto flex min-h-[260px] w-full max-w-[980px] items-center justify-center px-8 text-center">
+        {slides.map((slide, index) => {
+          const isActive = index === activeSlide;
+          const isPassed = index < activeSlide;
+
+          return (
+            <h1
+              key={slide}
+              className={`absolute max-w-[920px] text-3xl font-light leading-relaxed tracking-wide text-white transition-all duration-700 ease-out md:text-4xl lg:text-[46px] ${
+                isActive
+                  ? 'translate-y-0 scale-100 opacity-100 blur-0'
+                  : isPassed
+                    ? '-translate-y-10 scale-[0.96] opacity-0 blur-sm'
+                    : 'translate-y-10 scale-[1.03] opacity-0 blur-sm'
+              }`}
+            >
+              {slide}
+            </h1>
+          );
+        })}
       </div>
 
-      <div className="flex items-center gap-2 mt-12">
+      <div className="mt-14 flex items-center gap-2">
         {[0, 1, 2].map((index) => (
           <button
             key={index}
             onClick={() => setActiveSlide(index)}
-            className={`w-3 h-3 transition-all duration-300 ${
-              index <= activeSlide ? 'bg-white' : 'bg-white/30 hover:bg-white/60'
+            className={`h-3 w-3 transition-all duration-500 ${
+              index <= activeSlide ? 'bg-white shadow-[0_0_14px_rgba(255,255,255,0.65)]' : 'bg-white/30 hover:bg-white/60'
             }`}
             aria-label={`Slide ${index + 1}`}
           />

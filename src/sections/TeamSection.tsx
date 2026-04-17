@@ -1,6 +1,6 @@
 const TeamSection = () => {
   return (
-    <section className="min-h-[60vh] flex flex-col items-center justify-center bg-black py-10">
+    <section className="min-h-[60vh] snap-start flex flex-col items-center justify-center bg-black py-10">
       <div className="max-w-[800px] mx-auto px-8 text-center">
         <h2 className="text-white text-3xl md:text-4xl lg:text-[44px] font-semibold leading-tight tracking-wide mb-6">
           Наша команда создает
