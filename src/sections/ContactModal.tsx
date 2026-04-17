@@ -48,7 +48,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
   const dropdownOptions = {
     role: ['CEO / Founder', 'CTO', 'Product Manager', 'Marketing Director', 'Другое'],
     teamSize: ['1-10', '11-50', '51-200', '200+'],
-    budget: ['До 300K ₽', '300K - 1M ₽', '1M - 3M ₽', 'Более 3M ₽'],
+    budget: ['До 300 000 ₽', '300 000 - 1 000 000 ₽', '1 000 000 - 3 000 000 ₽', 'Более 3 000 000 ₽'],
   };
 
   if (!isOpen) return null;
