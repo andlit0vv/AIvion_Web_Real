@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ContactModal from './ContactModal';
+import logoArrowA from '../assets/logo-arrow-a.svg';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -30,25 +31,11 @@ const Header = () => {
       >
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
             <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
-              <span className="text-white text-2xl font-bold tracking-tight">K</span>
+              <img src={logoArrowA} alt="AIvion logo" className="h-12 w-auto object-contain" />
             </div>
 
-            {/* Navigation */}
             <nav className="flex items-center gap-8">
-              <button
-                onClick={() => scrollToSection('hero')}
-                className="text-white text-sm font-normal hover:opacity-80 transition-opacity"
-              >
-                Главная
-              </button>
-              <button
-                onClick={() => scrollToSection('solutions')}
-                className="text-white text-sm font-normal hover:opacity-80 transition-opacity"
-              >
-                Решения
-              </button>
               <button
                 onClick={() => scrollToSection('services')}
                 className="text-white text-sm font-normal hover:opacity-80 transition-opacity"
@@ -72,12 +59,6 @@ const Header = () => {
                 className="text-white text-sm font-normal hover:opacity-80 transition-opacity"
               >
                 Кейсы
-              </button>
-              <button
-                onClick={() => scrollToSection('contacts')}
-                className="text-white text-sm font-normal hover:opacity-80 transition-opacity"
-              >
-                Контакты
               </button>
               <button
                 onClick={() => setIsModalOpen(true)}
